@@ -1,3 +1,8 @@
+[![Build using Cake.Sdk and File based Cake](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-File.yml/badge.svg?branch=main)](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-File.yml)
+&nbsp;
+[![Build using Cake.Sdk and Project based Cake](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-Proj.yml/badge.svg)](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-Proj.yml)
+
+
 # Cake.Sdk Example Repository
 
 This repository demonstrates minimal, modern usage of [Cake.Sdk](https://www.nuget.org/packages/Cake.Sdk/) for .NET build automation. It showcases both file-based and project-based approaches for defining Cake build scripts, and includes a minimal .NET class library.
