@@ -21,7 +21,7 @@ jobs:
           global-json-file: global.json
 
       - name: Run Cake Project
-        uses: devlead/cake-action@feature/cakecs
+        uses: cake-build/cake-action@master
         with:
           project-path: build/build.csproj
           target: GitHubActions
