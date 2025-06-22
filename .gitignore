@@ -335,6 +335,7 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 tools/**
+multifile-build/**
 # !tools/packages.config
 
 # Tabs Studio

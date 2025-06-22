@@ -1,4 +1,7 @@
-using build;
+#:sdk Cake.Sdk
+#:property IncludeAdditionalFiles build/**/*.cs
+#:property RunWorkingDirectory $(MSBuildProjectDirectory)/..
+#:package Cake.BuildSystems.Module@7.1.0
 
 var target = Argument("target", "Pack");
 
@@ -21,8 +24,8 @@ Setup(context =>
     return new BuildData(
         Version: version.FullSemVer,
         Configuration: configuration,
-        SolutionFile: "./src/Example.sln",
-        ArtifactsDirectory: "./artifacts",
+        SolutionFile: MakeAbsolute(File("./src/Example.sln")),
+        ArtifactsDirectory: MakeAbsolute(Directory("./artifacts")),
         MSBuildSettings: new DotNetMSBuildSettings()
                             .SetVersion(version.FullSemVer)
                             .SetConfiguration(configuration)
@@ -91,4 +94,4 @@ Task("GitHubActions")
 // EXECUTION
 //////////////////////////////////////////////////////////////////////
 
-RunTarget(target);
+RunTarget(target); 

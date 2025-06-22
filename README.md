@@ -1,5 +1,7 @@
 [![Build using Cake.Sdk and File based Cake](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-File.yml/badge.svg?branch=main)](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-File.yml)
 &nbsp;
+[![Build using Cake.Sdk and Multi-File based Cake](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-MultiFile.yml/badge.svg?branch=main)](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-MultiFile.yml)
+&nbsp;
 [![Build using Cake.Sdk and Project based Cake](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-Proj.yml/badge.svg)](https://github.com/cake-build/cakesdk-example/actions/workflows/Cake_Sdk-Proj.yml)
 
 
@@ -19,16 +21,26 @@ This repository demonstrates minimal, modern usage of [Cake.Sdk](https://www.nug
 ```
 /
 ├── build.cs                  # File-based Cake build script
+|
 ├── build/
 │   └── build.csproj          # Project-based Cake build script using Cake.Sdk
+|
+├── multifile-build/
+│   ├── build.cs              # Multi-file based Cake build script
+│   └── build/
+│       └── BuildData.cs      # BuildData model for Multi-file build script
+|
 ├── src/
 │   └── Example/
 │       └── Example.csproj    # Minimal .NET class library (net10.0)
+|
 ├── global.json               # Pins .NET SDK and Cake.Sdk versions
 ├── .github/
 │   └── workflows/
 │       ├── CakeFile.yml      # GitHub Actions: file-based build
-│       └── CakeProj.yml      # GitHub Actions: project-based build
+│       ├── CakeProj.yml      # GitHub Actions: project-based build
+│       └── Cake_Sdk-MultiFile.yml # GitHub Actions: multi-file-based build
+|
 └── README.md                 # This file
 ```
 
@@ -44,11 +56,17 @@ This repository demonstrates minimal, modern usage of [Cake.Sdk](https://www.nug
   ```sh
   dotnet run --project build/build.csproj
   ```
+- **Multi-file-based build**:
+  Run with:
+  ```sh
+  dotnet cake multifile-build/build.cs
+  ```
 
 ## Continuous Integration
 
 - **.github/workflows/CakeFile.yml**: Runs the file-based build script on push/PR.
 - **.github/workflows/CakeProj.yml**: Runs the project-based build script on push/PR.
+- **.github/workflows/Cake_Sdk-MultiFile.yml**: Runs the multi-file-based build script on push/PR.
 
 Both workflows use the pinned .NET SDK and Cake.Sdk versions from `global.json`.
 

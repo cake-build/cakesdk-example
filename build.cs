@@ -74,7 +74,7 @@ Task("Pack")
             MSBuildSettings = data.MSBuildSettings,
             NoRestore = true,
             NoBuild = true,
-            OutputDirectory = "./artifacts"
+            OutputDirectory = data.ArtifactsDirectory
         });
 });
 
