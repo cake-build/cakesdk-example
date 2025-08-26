@@ -29,7 +29,7 @@ Setup(context =>
         MSBuildSettings: new DotNetMSBuildSettings()
                             .SetVersion(version.FullSemVer)
                             .SetConfiguration(configuration)
-                            .WithProperty("WarnAsError", "true"));
+                            .WithProperty("TreatWarningsAsErrors", "true"));
 });
 
 Task("Clean")
