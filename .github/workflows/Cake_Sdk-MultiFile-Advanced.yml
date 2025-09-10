@@ -1,0 +1,27 @@
+name: Build using Cake.Sdk and Multi-File based Cake (Advanced)
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install .NET Core SDK (global.json)
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Run Cake File
+        uses: cake-build/cake-action@master
+        with:
+          file-path: multifile-build-advanced/build.cs
+          target: GitHubActions
