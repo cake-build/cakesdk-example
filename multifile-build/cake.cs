@@ -1,7 +1,7 @@
 #:sdk Cake.Sdk
 #:property IncludeAdditionalFiles=build/**/*.cs
 #:property RunWorkingDirectory=$(MSBuildProjectDirectory)/..
-#:package Cake.BuildSystems.Module@8.0.0
+#:package Cake.BuildSystems.Module@9.0.0
 
 var target = Argument("target", "Pack");
 
