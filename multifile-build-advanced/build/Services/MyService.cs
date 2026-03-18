@@ -2,7 +2,7 @@ public class MyService : IMyService
 {
     public string GetVersion()
     {
-        InstallTool("dotnet:https://api.nuget.org/v3/index.json?package=GitVersion.Tool&version=6.6.1");
+        InstallTool("dotnet:https://api.nuget.org/v3/index.json?package=GitVersion.Tool&version=6.6.2");
         var version = GitVersion();
         return version.FullSemVer;
     }
