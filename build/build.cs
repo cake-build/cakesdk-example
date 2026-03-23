@@ -10,7 +10,7 @@ Setup(context =>
 {
     var configuration = Argument("configuration", "Release");
 
-    InstallTool("dotnet:https://api.nuget.org/v3/index.json?package=GitVersion.Tool&version=6.6.2");
+    InstallTool("dotnet:https://api.nuget.org/v3/index.json?package=GitVersion.Tool&version=6.7.0");
     var version = GitVersion();
 
     Information(
