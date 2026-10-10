@@ -1,3 +1,4 @@
+#!/usr/bin/env dotnet
 #:sdk Cake.Sdk
 #:package Cake.BuildSystems.Module@9.0.0
 
