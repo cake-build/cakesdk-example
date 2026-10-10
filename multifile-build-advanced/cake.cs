@@ -1,3 +1,4 @@
+#!/usr/bin/env dotnet
 #:sdk Cake.Sdk
 #:property IncludeAdditionalFiles=build/**/*.cs
 #:property RunWorkingDirectory=$(MSBuildProjectDirectory)/..
